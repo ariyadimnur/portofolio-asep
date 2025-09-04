@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Asep Mulyana - Teknisi AC</title>
+  <meta name="description" content="Teknisi AC berpengalaman di bidang service AC, isi freon, dan perawatan mesin. Asep Mulyana siap melayani kebutuhan Anda dengan harga terjangkau.">
+  <meta name="keywords" content="Service AC, Teknisi AC, Isi Freon, Perawatan AC, Asep Mulyana">
+  <meta name="author" content="Asep Mulyana">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Variabel warna */
+    :root{
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #0ea5e9;
+      --primary-strong: #0284c7;
+      --chip-bg: #e0f2fe;
+      --wa: #25D366;
+    }
+    body.dark{
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-strong: #0ea5e9;
+      --chip-bg: #1e40af;
+      --wa: #22c55e;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);
+      transition:background .3s,color .3s;line-height:1.6;scroll-behavior:smooth;
+    }
+
+    /* Navbar */
+    nav{
+      position:sticky;top:0;z-index:50;background:var(--card);
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+      padding:.8rem 1.25rem;border-bottom:1px solid #e5e7eb;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);transition:background .3s;
+    }
+    nav .logo{font-weight:800;color:var(--primary);font-size:1.2rem}
+    nav ul{list-style:none;display:flex;gap:1rem}
+    nav a{
+      font-weight:600;color:var(--text);text-decoration:none;position:relative;transition:.3s;
+    }
+    nav a::after{
+      content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;
+      background:var(--primary);transition:.3s;
+    }
+    nav a:hover{color:var(--primary)}
+    nav a:hover::after{width:100%}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:4px}
+    .menu-toggle span{display:block;width:25px;height:3px;background:var(--text);border-radius:2px}
+    @media (max-width:768px){
+      nav ul{flex-direction:column;width:100%;max-height:0;overflow:hidden;transition:.4s ease}
+      nav ul.active{max-height:400px}
+      .menu-toggle{display:flex}
+    }
+
+    /* Dark mode button */
+    #theme-toggle{
+      background:var(--primary);border:none;color:white;padding:6px 10px;
+      border-radius:8px;cursor:pointer;font-size:1rem;margin-left:1rem;transition:.3s;
+    }
+    #theme-toggle:hover{background:var(--primary-strong)}
+
+    /* Header */
+    header{
+      text-align:center;padding:3rem 1.5rem;
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);color:white;
+    }
+    body.dark header{background:linear-gradient(135deg,#0ea5e9,#1e40af)}
+    header img{width:140px;height:140px;border-radius:50%;border:4px solid white;object-fit:cover;margin-bottom:1rem;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    header h1{font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:.3rem;font-weight:700}
+    header p{font-size:clamp(1rem,3vw,1.2rem);opacity:.95}
+    .cta-btn{
+      display:inline-block;margin-top:1rem;padding:0.7rem 1.5rem;
+      background:var(--wa);color:white;border-radius:999px;font-weight:600;text-decoration:none;
+      box-shadow:0 4px 10px rgba(37,211,102,.3);transition:.3s;
+    }
+    .cta-btn:hover{background:#1ebe5d;transform:scale(1.05)}
+
+    /* Container & card */
+    .container{max-width:1000px;margin:auto;padding:2rem 1.5rem}
+    .card{background:var(--card);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:background .3s}
+    .card h2{margin-bottom:.75rem;color:var(--primary-strong);font-weight:700}
+    .muted{color:var(--muted)}
+
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+    .chip{padding:.4rem .75rem;border-radius:999px;background:var(--chip-bg);font-weight:600;font-size:.9rem}
+
+    /* Project & Pricing */
+    .projects{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .project{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:var(--card);transition:.3s}
+    body.dark .project{border:1px solid #334155}
+    .project:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    .project .body{padding:1rem}
+    .project h3{margin-bottom:.35rem;font-size:1.1rem;font-weight:600}
+    .project p{font-size:.9rem;color:var(--muted)}
+
+    /* WhatsApp button */
+    .wa-btn{
+      display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;
+      padding:0.6rem 1.2rem;background:var(--wa);color:white;font-weight:600;border-radius:999px;
+      text-decoration:none;font-size:.9rem;transition:.3s;box-shadow:0 4px 10px rgba(37,211,102,.3);
+    }
+    .wa-btn img{width:18px;height:18px}
+    .wa-btn:hover{background:#1ebe5d;transform:scale(1.05)}
+
+    /* Floating WA */
+    .wa-float{
+      position:fixed;bottom:20px;right:20px;background:var(--wa);color:white;border-radius:50%;
+      width:55px;height:55px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 6px 15px rgba(0,0,0,.2);z-index:100;transition:.3s;animation:pulse 2s infinite;
+    }
+    .wa-float img{width:30px;height:30px}
+    .wa-float:hover{background:#1ebe5d;transform:scale(1.1)}
+
+    /* Footer */
+    footer{text-align:center;padding:1rem;color:var(--muted);border-top:1px solid #e5e7eb;margin-top:2rem}
+    body.dark footer{border-top:1px solid #334155}
+
+    /* Animasi */
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Asep Mulyana</div>
+    <div style="display:flex;align-items:center;">
+      <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+      <button id="theme-toggle">🌙</button>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#tentang" class="nav-link">Tentang</a></li>
+      <li><a href="#keahlian" class="nav-link">Keahlian</a></li>
+      <li><a href="#harga" class="nav-link">Harga</a></li>
+      <li><a href="#proyek" class="nav-link">Proyek</a></li>
+      <li><a href="#kontak" class="nav-link">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0fT_uK0j-vvtqkUlDAcPHBKsXMYCHupAzNAycLDjqz03w40skFHxqzd_rpa1RvF7MU-cSUQ400y7RIZtffLqvQxpNsCHrsInUDHvuB_twpCvOMBDr-2jD-V2ivIExQD_1j7OMn58aODPMNmYCcUfjk_BGrJKMbSg8fV3qjrT236S30-oe5bccmfoqofcB/s206/Screenshot%202025-09-04%20091611.webp" alt="Foto Asep Mulyana" loading="lazy">
+    <h1>ASEP MULYANA</h1>
+    <p>Teknisi AC | Teknik Mesin</p>
+    <a href="https://wa.me/6281320789549?text=Halo%20Pak%20Asep,%20saya%20butuh%20jasa%20service%20AC" target="_blank" class="cta-btn">📲 Pesan Sekarang</a>
+  </header>
+
+  <main class="container">
+    <section id="tentang" class="card">
+      <h2>👋 Tentang Saya</h2>
+      <p>Saya seorang Teknisi AC berpengalaman yang siap membantu Anda dengan layanan service AC, perawatan mesin, hingga isi ulang freon dengan hasil rapi & cepat.</p>
+    </section>
+
+    <section id="keahlian" class="card">
+      <h2>⚡ Keahlian Utama</h2>
+      <div class="chips">
+        <span class="chip">Service & Maintenance AC</span>
+        <span class="chip">Isi Ulang Freon</span>
+        <span class="chip">Bongkar Pasang AC</span>
+        <span class="chip">Perawatan Mesin</span>
+        <span class="chip">Troubleshooting</span>
+      </div>
+    </section>
+
+    <section id="harga" class="card">
+      <h2>💰 Daftar Harga Jasa</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="body">
+            <h3>Service AC Standar</h3>
+            <p class="muted">Pembersihan filter, cek freon, dan perawatan ringan.</p>
+            <p><strong>Rp 150.000</strong></p>
+            <a href="https://wa.me/6281320789549?text=Pesan%20Service%20AC%20Standar" target="_blank" class="wa-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> Pesan</a>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <h3>Isi Ulang Freon</h3>
+            <p class="muted">Pengisian freon R32 / R410 sesuai kebutuhan.</p>
+            <p><strong>Rp 250.000</strong></p>
+            <a href="https://wa.me/6281320789549?text=Pesan%20Isi%20Ulang%20Freon" target="_blank" class="wa-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> Pesan</a>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <h3>Perawatan Lengkap</h3>
+            <p class="muted">Service menyeluruh unit indoor & outdoor.</p>
+            <p><strong>Rp 400.000</strong></p>
+            <a href="https://wa.me/6281320789549?text=Pesan%20Perawatan%20Lengkap" target="_blank" class="wa-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> Pesan</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyek" class="card">
+      <h2>📂 Proyek</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="body">
+            <h3>Pemasangan AC Rumah</h3>
+            <p class="muted">Pemasangan AC split di ruang tamu & kamar tidur.</p>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <h3>Perawatan Kantor</h3>
+            <p class="muted">Service rutin 10 unit AC di kantor Jakarta.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontak" class="card">
+      <h2>📞 Kontak</h2>
+      <p>Email: <a href="mailto:admin@asep.com">admin@asep.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6281320789549" target="_blank">+62 813-2078-9549</a></p>
+
+      <!-- Google Maps -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.712135796195!2d106.82718371536786!3d-6.170247395530631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3f3bda23ab3%3A0x2d69e0e5bfb6f6f7!2sJakarta!5e0!3m2!1sid!2sid!4v1693767154634!5m2!1sid!2sid" width="100%" height="250" style="border:0;border-radius:12px;margin:1rem 0;" allowfullscreen="" loading="lazy"></iframe>
+
+      <!-- Form kontak -->
+      <form action="https://formspree.io/f/xpwanvqr" method="POST" style="display:flex;flex-direction:column;gap:.6rem;">
+        <input type="text" name="nama" placeholder="Nama Anda" required style="padding:.6rem;border-radius:8px;border:1px solid #ccc">
+        <input type="email" name="email" placeholder="Email Anda" required style="padding:.6rem;border-radius:8px;border:1px solid #ccc">
+        <textarea name="pesan" placeholder="Pesan Anda..." rows="4" required style="padding:.6rem;border-radius:8px;border:1px solid #ccc"></textarea>
+        <button type="submit" style="padding:.6rem;border:none;border-radius:8px;background:var(--primary);color:white;font-weight:600;cursor:pointer">Kirim Pesan</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/6281320789549?text=Halo%20Pak%20Asep,%20saya%20ingin%20bertanya" class="wa-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+  </a>
+
+  <footer>
+    © <span id="year"></span> Asep Mulyana. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click',()=>navLinks.classList.toggle('active'));
+
+    // dark mode toggle
+    const themeToggle=document.getElementById('theme-toggle');const body=document.body;
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark');themeToggle.textContent='☀️';}
+    themeToggle.addEventListener('click',()=>{
+      body.classList.toggle('dark');
+      if(body.classList.contains('dark')){themeToggle.textContent='☀️';localStorage.setItem('theme','dark');}
+      else{themeToggle.textContent='🌙';localStorage.setItem('theme','light');}
+    });
+  </script>
+</body>
+</html>

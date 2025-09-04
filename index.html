@@ -161,6 +161,26 @@
     .wa-btn img{width:18px;height:18px}
     .wa-btn:hover{background:#1ebe5d;transform:scale(1.05)}
 
+    /* Link di dalam kontak */
+#kontak a {
+  color: #0ea5e9;   /* biru muda */
+  font-weight: 600;
+  text-decoration: none;
+  transition: .3s;
+}
+#kontak a:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Tambahan styling untuk teks kontak */
+#kontak p {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* jarak icon dengan teks */
+}
+
+
     /* WA Floating */
     .wa-float{
       position:fixed;bottom:20px;right:20px;
@@ -283,19 +303,15 @@
     </section>
 
     <section id="kontak" class="card">
-      <h2>📞 Kontak</h2>
-      <p>Email: <a href="mailto:admin@asep.com">admin@asep.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6281320789549" target="_blank">+62 813-2078-9549</a></p>
-      <p>Instagram: <a href="#">instagram.com/username</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/username</a></p>
+  <h2>📞 Kontak</h2>
+  <p>📧 <a href="mailto:admin@asep.com">admin@asep.com</a></p>
+  <p>📱 <a href="https://wa.me/6281320789549" target="_blank">+62 813-2078-9549</a></p>
+  <p>📸 <a href="#">instagram.com/username</a></p>
+  <p>💼 <a href="#">linkedin.com/in/username</a></p>
 
-      
+  
+</section>
 
-      <a href="https://wa.me/6281320789549?text=Halo%20Pak%20Asep,%20saya%20ingin%20bertanya%20tentang%20jasa%20service%20AC" 
-         target="_blank" class="wa-btn">
-         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" loading="lazy"> Chat via WhatsApp
-      </a>
-    </section>
   </main>
 
   <!-- Tombol WhatsApp Floating -->

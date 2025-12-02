@@ -1,4 +1,68 @@
-User-agent: *
+#########################################
+# robots.txt — SEO BALANCED (Recommended)
+#########################################
+
+###########  GOOGLE: Full Access  ###########
+User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+###########  SEARCH ENGINE LAIN (Allowed) ###########
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+############  BLOK BOT SAMPAH / ANALYTICS / SPAM ############
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+############  OTHER BOTS (Strict Mode) ############
+User-agent: *
+Disallow: /draft/
+Disallow: /backup/
+Disallow: /temp/
+Allow: /
+
+
+############  SITEMAP ############
 Sitemap: https://teknomasakini.eu.org/sitemap.xml

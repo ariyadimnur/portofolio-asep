@@ -1,18 +1,26 @@
-#########################################
-# robots.txt — SEO BALANCED (Optimized)
-#########################################
+##############################################
+# robots.txt — PRO EDITION (Extreme SEO Boost)
+# Teknisi AC Bandung • Teknomasakini.eu.org
+##############################################
 
-###########  GOOGLE: Full Access  ###########
+##########  GOOGLE – FULL POWER MODE  ##########
 User-agent: Googlebot
+Allow: /
+Allow: /*.html$
+Allow: /*?$
+Disallow: /*?ref=
+Disallow: /*?source=
+Disallow: /*?utm_=
+Disallow: /*?fbclid=
+Crawl-delay: 1
+
+User-agent: Googlebot-Mobile
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
-User-agent: Googlebot-Mobile
-Allow: /
-
-###########  SEARCH ENGINE LAIN (Allowed) ###########
+##########  SEARCH ENGINE BAIK (Allowed) ##########
 User-agent: Bingbot
 Allow: /
 
@@ -22,7 +30,7 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-############  BLOK BOT SPAM / SCRAPER ############
+###########  BLOCK SCRAPER & BAD BOT #############
 User-agent: AhrefsBot
 Disallow: /
 
@@ -44,24 +52,39 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
+User-agent: Baiduspider
+Disallow: /
+
 User-agent: CCBot
 Disallow: /
 
 User-agent: Exabot
 Disallow: /
 
-User-agent: Baiduspider
-Disallow: /
-
 User-agent: ia_archiver
 Disallow: /
 
-############  OTHER BOTS (Normal Mode) ############
+###########  AGRESIF BOT — TURUNKAN AGRESI ###########
+# Tidak di-block total, tapi diperlambat (hemat bandwidth)
+User-agent: Bytespider
+Crawl-delay: 10
+
+User-agent: MauiBot
+Crawl-delay: 15
+
+User-agent: Sogou spider
+Crawl-delay: 20
+
+############  OTHER BOTS — STANDARD RULE ############
 User-agent: *
+Allow: /
 Disallow: /draft/
 Disallow: /backup/
 Disallow: /temp/
-Allow: /
+Disallow: /*?ref=
+Disallow: /*?utm_=
+Disallow: /*?source=
+Disallow: /*?fbclid=
 
-############  SITEMAP ############
+############  SITEMAP (WAJIB) ############
 Sitemap: https://teknomasakini.eu.org/sitemap.xml

@@ -1,5 +1,5 @@
 #########################################
-# robots.txt — SEO BALANCED (Recommended)
+# robots.txt — SEO BALANCED (Optimized)
 #########################################
 
 ###########  GOOGLE: Full Access  ###########
@@ -22,7 +22,7 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-############  BLOK BOT SAMPAH / ANALYTICS / SPAM ############
+############  BLOK BOT SPAM / SCRAPER ############
 User-agent: AhrefsBot
 Disallow: /
 
@@ -53,16 +53,15 @@ Disallow: /
 User-agent: Baiduspider
 Disallow: /
 
-User-agent: archive.org_bot
+User-agent: ia_archiver
 Disallow: /
 
-############  OTHER BOTS (Strict Mode) ############
+############  OTHER BOTS (Normal Mode) ############
 User-agent: *
 Disallow: /draft/
 Disallow: /backup/
 Disallow: /temp/
 Allow: /
-
 
 ############  SITEMAP ############
 Sitemap: https://teknomasakini.eu.org/sitemap.xml
